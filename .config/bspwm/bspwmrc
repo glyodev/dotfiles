@@ -1,0 +1,85 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# bspc monitor -d I II III IV V VI VII VIII IX X
+# bspc monitor -d  󰨞 󰖟  󰎙  󰉋   
+# bspc monitor -d 1 2 3 4 5 6 7
+
+
+
+# Detectar la cantidad de monitores conectados
+SCREEN=$(xrandr | grep " connected " | wc -l)
+
+# Comando para el monitor principal
+PRIMARY_MONITOR="eDP-1"
+
+# Verificar si hay un monitor secundario conectado
+#SECONDARY_MONITOR=$(xrandr | grep " connected " | grep -v "$PRIMARY_MONITOR" | awk '{ print $1 }')
+SECONDARY_MONITOR="HDMI-1"
+
+# Configuración de bspwm y polybar según la cantidad de monitores conectados
+if [[ $SCREEN -eq 1 ]]; then
+		# Mover ventanas del monitor secundario al monitor principal antes de eliminar el secundario
+    if bspc query -M --names | grep "$SECONDARY_MONITOR"; then
+        bspc query -N -m "$SECONDARY_MONITOR" | while read -r node_id; do
+            bspc node "$node_id" --to-monitor "$PRIMARY_MONITOR"
+        done
+        
+        # Eliminar el monitor secundario de bspwm
+        bspc monitor "$SECONDARY_MONITOR" --remove
+    fi
+
+    # Solo un monitor conectado
+    $HOME/.screenlayout/resolucion.sh
+    bspc monitor "$SECONDARY_MONITOR" --remove
+    bspc monitor "$PRIMARY_MONITOR" -d 1 2 3 4 5
+
+    # Reiniciar Polybar en el monitor principal
+    killall -q polybar
+    $HOME/.config/polybar/launch.sh
+    notify-send "Configuración para un monitor aplicada."
+
+elif [[ $SCREEN -eq 2 && -n "$SECONDARY_MONITOR" ]]; then
+    # Dos monitores conectados
+    $HOME/.screenlayout/resolucion-2p.sh
+    # $HOME/.screenlayout/espejo.sh
+    bspc monitor "$PRIMARY_MONITOR" -d 1 2 3
+		# bspc monitor "$PRIMARY_MONITOR" -d 1 2 3
+    bspc monitor "$SECONDARY_MONITOR" -d 4 5 6 7
+
+    # Reiniciar Polybar para ambos monitores
+    killall -q polybar
+    $HOME/.config/polybar/launch2.sh
+    notify-send "Configuración para dos monitores aplicada."
+fi
+
+
+
+bspc config border_width         1
+bspc config window_gap          7
+# bspc config top_padding	         0
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer	true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+bspc rule -a "Galculator" state=floating
+bspc rule -a "Proton-authenticator" state=floating
+bspc rule -a "pavucontrol" state=floating
+bspc rule -a "Arandr" state=floating
+
+# export _JAVA_AWT_WM_NONREPARENTING=1
+#~/.config/bspwm/scripts/idle.sh &
+xss-lock -- ~/.config/bspwm/scripts/lock.sh &
+xset s 600 600
+xset dpms 600 600 900
+
+wmname	LG3D

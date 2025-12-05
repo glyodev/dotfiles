@@ -1,0 +1,7 @@
+[Unit]
+Description=Cambiar tema automáticamente según la hora
+
+[Service]
+Type=oneshot
+ExecStart=%h/.scripts/services/theme.sh
+

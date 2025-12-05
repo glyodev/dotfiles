@@ -1,0 +1,13 @@
+[user]
+	name = gcoddev
+	email = geco.yak77@gmail.com
+[core]
+	pager = less -FX
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[http]
+	postBuffer = 157286400

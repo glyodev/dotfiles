@@ -1,0 +1,38 @@
+#!/bin/sh
+
+numlockx on
+# Detectar qué sesión se está iniciando
+if [[ "$DESKTOP_SESSION" == "bspwm" || "$XDG_SESSION_DESKTOP" == "bspwm" || "$XDG_CURRENT_DESKTOP" == "bspwm" ]]; then
+	###########################################################
+	# $HOME/.screenlayout/resolucion.sh
+	setxkbmap latam
+	# pm2 update
+
+	###########################################################
+	#light-locker &
+	#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+	/usr/lib/xfce4/notifyd/xfce4-notifyd &
+	/usr/lib/xdg-desktop-portal-gtk &
+	xfce4-power-manager &
+	xfce4-clipman &
+	picom --backend glx --vsync &
+	# blueman-applet &
+	#blueberry-tray
+	sxhkd &
+	nitrogen --restore &
+	# xfce4-terminal -x htop &
+	# alacritty --command=htop &
+	# alacritty --command=bashtop &
+	# plank &
+	# xbindkeys
+
+	#notify-send -i dialog-ok "¡ Hola ! . Bienvenido de vuelta $(whoami)"
+	exec bspwm
+	sleep 5
+	bspc config focus_follows_pointer true
+
+	bspc wm -r
+fi
+
+#export QT_QPA_PLATFORMTHEME=gtk2
+export QT_QPA_PLATFORMTHEME=qt5ct

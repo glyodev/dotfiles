@@ -1,0 +1,11 @@
+[Unit]
+Description=Temporizador para cambio de tema automáticamente
+
+[Timer]
+OnCalendar=*-*-* 06:30:00
+OnCalendar=*-*-* 18:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

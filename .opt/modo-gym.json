@@ -1,0 +1,605 @@
+type: collection.insomnia.rest/5.0
+name: MODO GYM
+meta:
+  id: wrk_1c5de6e5fecd49b7adc80c618406f957
+  created: 1743722518227
+  modified: 1743722518227
+collection:
+  - name: MODO GYM LOCAL
+    meta:
+      id: fld_6fcfb51fc6e149efb14eee0789f11895
+      created: 1728847569874
+      modified: 1746627980281
+      sortKey: -1728847569874
+    children:
+      - name: Rutinas
+        meta:
+          id: fld_f0204911a98c4158beb550e5f5b7b16b
+          created: 1738607185168
+          modified: 1738607185168
+          sortKey: -1738607185168
+        children:
+          - url: http://127.0.0.1:8000/api/rutinas-app
+            name: Rutinas App
+            meta:
+              id: req_2bd9d1e76c1a40a695eb81477fb413aa
+              created: 1738606643489
+              modified: 1738612768748
+              isPrivate: false
+              sortKey: -1738607190409
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"rut_id": 29
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/10.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://192.168.0.181:8000/api/likes-app/52
+            name: Rutinas App
+            meta:
+              id: req_bd6188fba09c4c48acad16ba579abaf4
+              created: 1738606799870
+              modified: 1744650476053
+              isPrivate: false
+              sortKey: -1738607190209
+            method: DELETE
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"blog_id": 52
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/10.0.0
+            authentication:
+              type: bearer
+              token: 26|kv2OUNcRxaneve3ZrNz0QpMIH92spr89co83bmGO7689d50f
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://192.168.0.182:8000/api/blogs-app/14068564837
+            name: Blogs App
+            meta:
+              id: req_f69092616e9340919fc206f133ae1517
+              created: 1738671510842
+              modified: 1744638474458
+              isPrivate: false
+              sortKey: -1738607190309
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/10.0.0
+            authentication:
+              type: bearer
+              token: 39|2WpOQLb32il3VLi3T8OO3to0XSRNu5yRASiSwpLm0f774f03
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://192.168.0.182:8000/api/nutricion-app
+            name: Nutricion  App
+            meta:
+              id: req_42196b72472a461595efc3239037732d
+              created: 1744643191598
+              modified: 1744643201483
+              isPrivate: false
+              sortKey: -1738607190259
+            method: GET
+            body:
+              mimeType: application/json
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/10.0.0
+            authentication:
+              type: bearer
+              token: 39|2WpOQLb32il3VLi3T8OO3to0XSRNu5yRASiSwpLm0f774f03
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - url: http://127.0.0.1:8000/api/registra-asistencia
+        name: Registrar asistencia
+        meta:
+          id: req_e86f27f970ed4bfd93497706ef52b92c
+          created: 1728402366440
+          modified: 1735175782607
+          isPrivate: false
+          sortKey: -1728847573204
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"usu_ci": 10077835
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        authentication:
+          type: apikey
+          disabled: false
+          key: Api-Secret
+          value: SA1c2UCkQ5vMAf9Tc2aOIaTyO+Pg9XUZ/ZFUJBuMVpk=
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/login-app
+        name: Login App
+        meta:
+          id: req_41691f13bb9646e9bd6b263d3c84bdf5
+          created: 1728847576101
+          modified: 1744638113458
+          isPrivate: false
+          sortKey: -1728847576101
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "gary",
+            	"password": "yakys"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        authentication:
+          type: apikey
+          disabled: false
+          key: Api-Secret
+          value: ñrook pok gpokh ŕkh ´tkg´tphmtrhotrhr
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/rutinas-app-user-dia/14068564837
+        name: Rutinas App
+        meta:
+          id: req_f389e1dafeda4627938c4c08baae7553
+          created: 1728851770366
+          modified: 1738612651702
+          isPrivate: false
+          sortKey: -1728851770366
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://192.168.0.76:8000/api/profile-app/14068564837
+        name: Profile
+        meta:
+          id: req_3b8bcc16ca5a41fa9fc05d6f5383b70a
+          created: 1729400112217
+          modified: 1736885120400
+          isPrivate: false
+          sortKey: -1728847574652.5
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        authentication:
+          type: apikey
+          disabled: false
+          key: Api-Secret
+          value: ñrook pok gpokh ŕkh ´tkg´tphmtrhotrhr
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/api/password-app/14068564837
+        name: Update Password
+        meta:
+          id: req_ba3f9dbe0dd34d8b951bbe28ffb03cf6
+          created: 1738595858451
+          modified: 1738596900445
+          isPrivate: false
+          sortKey: -1728847575376.75
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"username": "10077835",
+            	"password": "GARY_10077835"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        authentication:
+          type: apikey
+          disabled: false
+          key: Api-Secret
+          value: ñrook pok gpokh ŕkh ´tkg´tphmtrhotrhr
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: "MODO GYM "
+    meta:
+      id: fld_833dfb308a7742b0b8944c2e531657a6
+      created: 1736370264555
+      modified: 1736370264555
+      sortKey: -1728459654618
+    children:
+      - url: https://modo-gym.garycdev.com/api/registra-asistencia
+        name: Registrar asistencia
+        meta:
+          id: req_70b13c9a74634076a1882a4cdcded3e0
+          created: 1736370264556
+          modified: 1736370466727
+          isPrivate: false
+          sortKey: -1728847573204
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"usu_ci": 10077835
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        authentication:
+          type: apikey
+          disabled: false
+          key: Api-Secret
+          value: SA1c2UCkQ5vMAf9Tc2aOIaTyO+Pg9XUZ/ZFUJBuMVpk=
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://modo-gym.garycdev.com/api/login-app
+        name: Login App
+        meta:
+          id: req_92d848bc8d354d04b9aef350bcbdc66d
+          created: 1736370264557
+          modified: 1743781214684
+          isPrivate: false
+          sortKey: -1728847576101
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "gary",
+            	"password": "yakys"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        authentication:
+          type: apikey
+          disabled: false
+          key: Api-Secret
+          value: ñrook pok gpokh ŕkh ´tkg´tphmtrhotrhr
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://modo-gym.garycdev.com/api/rutinas-app-user/14068564837
+        name: Rutinas App
+        meta:
+          id: req_debc8d0a088f463e8dfdae50019581e9
+          created: 1736370264558
+          modified: 1736919225626
+          isPrivate: false
+          sortKey: -1728851770366
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://modo-gym.garycdev.com/api/profile-app/14068564837
+        name: Profile
+        meta:
+          id: req_fe3bcdb39c134382bec9620162dabc11
+          created: 1736370264559
+          modified: 1738596985726
+          isPrivate: false
+          sortKey: -1728847574652.5
+        method: GET
+        body:
+          mimeType: application/json
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        authentication:
+          type: apikey
+          disabled: false
+          key: Api-Secret
+          value: ñrook pok gpokh ŕkh ´tkg´tphmtrhotrhr
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://modo-gym.garycdev.com/api/password-app/14068564837
+        name: Password
+        meta:
+          id: req_235f82c3efc54bebbc2c6136fdc64f14
+          created: 1738596990111
+          modified: 1738597119964
+          isPrivate: false
+          sortKey: -1728847573928.25
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"username": "10077835",
+            	"password": "GARY_10077835"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        authentication:
+          type: apikey
+          disabled: false
+          key: Api-Secret
+          value: ñrook pok gpokh ŕkh ´tkg´tphmtrhotrhr
+          addTo: header
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - url: https://toolbox.googleapps.com/apps/dig/lookup
+    name: New Request
+    meta:
+      id: req_9583ea5d2e0d438d9567a5f472266cd1
+      created: 1737035076985
+      modified: 1737035206439
+      isPrivate: false
+      sortKey: -1737035076985
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_1095f77409cf4124b9ff97ee090d5704
+          name: csrfmiddlewaretoken
+          value: z9y5WrRnz8lxAgmtlowdipTw9wf7Lf3l3tvch2PjcSDv0S7VX5wjdrlHanhI6aWk
+          disabled: false
+        - id: pair_b60b73c2512e4fbb9a7b12e45ef498f9
+          name: domain
+          value: _acme-challenge.garycdev.com
+          disabled: false
+        - id: pair_2f36c227cebb47849861482aa95b6cfc
+          name: typ
+          value: TXT
+          disabled: false
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+      - name: User-Agent
+        value: insomnia/10.1.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_9f8f2626f31346c4aa66cb188b7a82f7
+    created: 1728402361162
+    modified: 1744650469081
+  cookies:
+    - key: XSRF-TOKEN
+      value: eyJpdiI6IjZtSk9tT1NJTEd5Ymd3a0NROUN4RVE9PSIsInZhbHVlIjoiUGtrYjV1c2pXVUxKK2VSNEN6VSthZWVJSjZHek53S29jOU8rVlIvayttMlJNS3pJNzVLVXZKSkJxT1NRWWxHRzdhY0l0ZlNydjZuZFhvajNoMjRGTkFaM2hzN3E1MVJVcUM3akNDbjZ4eUNUUmM0SDIwbzhLM3hqRHAydlF3OTAiLCJtYWMiOiI1OTRlMmZjYzY4YWFhZjJhMDZiN2U1NmZiODlkODFlMGM5MjUwOGVhZGYyYTc0MWU1OGE5YTY3NThkZDY0ODljIiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: 192.168.0.133
+      path: /
+      hostOnly: true
+      creation: 2024-10-13T19:36:35.466Z
+      lastAccessed: 2024-10-13T19:36:57.814Z
+      sameSite: lax
+      id: df4cc748-9eb7-4560-ab40-dfaeaa7b1b53
+    - key: laravel_session
+      value: eyJpdiI6InVRRGpNcWZMYU9TY2E4Y2V4M2FibHc9PSIsInZhbHVlIjoiZXl2MklTeElhT3pQUnVuaDNlRFVzWWNlVEJoK2lINnN2Q0xyRXRjUGdRbktlc1hmK25QbTBKUnplZzdIbUlOeWlFbGZqN01IM1RJM3NpVGRzZDYyeHFtdXhaOC9Lb1hVSmVLamFwaWU1SWdzZW4weUQxUWVHRkF3WVYrVHM3VzUiLCJtYWMiOiJmODc0OWYxMjgwZjgwODAyZjJhNTI2MWE2N2Q5YTcwYjFjZDA2OGYwZjQ4OGJhM2IwNzUzMjkwNmM1ZGIzZTQyIiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: 192.168.0.133
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2024-10-13T19:36:35.468Z
+      lastAccessed: 2024-10-13T19:36:57.814Z
+      sameSite: lax
+      id: bc0a714d-19d7-4cca-83f0-3e4d80fa7ec7
+    - key: wt_sessionid
+      value: 344vc3kmzrm9y6ogop4bix7eciexib7o
+      maxAge: 14400
+      domain: toolbox.googleapps.com
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-01-16T13:45:30.403Z
+      lastAccessed: 2025-01-16T13:46:47.616Z
+      sameSite: lax
+      id: 3813ed5f-0bc9-47e0-9f70-331edf0f5e59
+    - key: XSRF-TOKEN
+      value: eyJpdiI6IjVYYTNuR3VKbThKWVRUSWcyN05mK1E9PSIsInZhbHVlIjoiOXlzcVhNL1VvOXRTK0JVUWxXZHo2b0xaQmlGdUYrdlNaRGZwWi90TFlpRGRhbnFsSm1BSmNkeGJWc0x6V1BpYThoa1A2QjNMTUNmdTZKcGx4TWtRTVhqWE5RbnVib1pRZTgwWndycGRQcEg4ekNCWXl3a3ZRVy9GL1A3a05YOFIiLCJtYWMiOiJkYjE1MzAxOGEyNzg0OTdmOTRlMWRkMjI4ZTIzNTBkNjBiZTAyZTliOTgwZDZiNzljOWYyYjk1MjEwOWQwMjIxIiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: modo-gym.garycdev.com
+      path: /
+      secure: true
+      hostOnly: true
+      creation: 2025-04-14T13:42:24.014Z
+      lastAccessed: 2025-04-14T13:43:07.019Z
+      sameSite: lax
+      id: e47467f7-f4c6-4b90-98fb-b8dd9075239d
+    - key: laravel_session
+      value: eyJpdiI6ImxIUkpFTTl4K0hqam8xK1BGZXpZYlE9PSIsInZhbHVlIjoiY1Zzbk5JNEh0bzZpbENmTm9La1JIekM5WnIvZW1ISjR3RnlnWXhFUnVjM0phRXl3RUF6aEM3QnV5cU1iSUtFVjNjVlRPTXFUK1gzSWJJdW5Tem1yZnNPUXovcktRbE4velUzZWxoQWFsRVpRUVNjd3hUYi9aWjJIYVpXek9OY0IiLCJtYWMiOiIwNDBhZTljNGE2MjY5MGNlNDdjMWRmNjA3ODYzNjQzZjQzNGExMWNlNzZkZDlhNGFhYTJmOGEzYzgwNmVjMzNlIiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: modo-gym.garycdev.com
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-04-14T13:42:24.015Z
+      lastAccessed: 2025-04-14T13:43:07.019Z
+      sameSite: lax
+      id: 7cb64b3e-c5c9-4d15-a062-1279b9c23932
+    - key: XSRF-TOKEN
+      value: eyJpdiI6Ik00alFVVGNGNHQyd25vU1NFUnRkN1E9PSIsInZhbHVlIjoicXliQU5tdGtldC9mVGVNdXFTSk1sRG9RL1VERVkwNGNjbEhBem1NZmJFSkZHamtMUFdFK2VmQ3E2dnQxeWRtT08yMk90cFJDQlhxNU9hVGRRd0FDZENBQnVEL3J2Sm00WHZ0T0oxQWJIMEJoSUYyYTBEZEZZMUF5L2dsaUFxbGkiLCJtYWMiOiJiODkzODFkNTk1ZDk4ZjhmOWUyZDFiNzcyYjIzODkxYjcyM2M3ZmJmOWQ3MTdiMTVhZGMzMzE5YjcyYTYwZjEwIiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: 127.0.0.1
+      path: /
+      hostOnly: true
+      creation: 2025-04-14T17:06:10.443Z
+      lastAccessed: 2025-04-14T17:06:54.512Z
+      sameSite: lax
+      id: fb8f2e5c-98d5-47b9-b0a5-9f73e189e4a7
+    - key: laravel_session
+      value: eyJpdiI6IjdkaTl1RC9LQld0cnRPdUZWck9MaWc9PSIsInZhbHVlIjoiR2EzNElkMjMrN2dKdmJuVEEzY0dPNkxkc0llNWl2eGlPRmwvaG1uNGt3V1BiaXBRNTFxQ1NVdk9KMnJsdm5ucEpoMWlUM2lSSUdLRXFZbExvNjlib01lM3JTVmpvWCtuOUt0cFBrQmxYNWhCVk1VaklpcllsdmpCY2N1OE8vTVoiLCJtYWMiOiJjMGYwYjI1MzBmMzA3N2Q1YzI4NWNhNzNjNGRmNGRmZWFmZGI2YjMzM2QyM2FiYjQzZjM3YTM4MjgyOTA1OWRlIiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: 127.0.0.1
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-04-14T17:06:10.444Z
+      lastAccessed: 2025-04-14T17:06:54.513Z
+      sameSite: lax
+      id: 945b1824-f5c6-403a-961f-8f5fcd3fac83
+    - key: XSRF-TOKEN
+      value: eyJpdiI6Ik1xMjJWRHIvMWZEQzhmRUZHSVlFT1E9PSIsInZhbHVlIjoiQWw4czk4RTlqZmIzS0dIamZSWENEYkVTN0lXYTZ6VjJ4ZmtBalp6WUhiMU1BRjBrT2tkaG5rVjBsMTdQemJHWUpoMGF3VjdrQzJoOStXU0N0eUp2R2VBbXUrcm9RSklyeFc0UGs3V09BQWpCUUx3NkpwSWY5UzNiUHJxeC9DQlUiLCJtYWMiOiJlYWY4MGRmYTFiZTE1ZWNjMGNkZGEyOTgzYzI4NGViODA3ZWE1MmM5NTNmOWE2Y2QwNzdlMTZmZWI3NzM4OGZmIiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: 192.168.0.181
+      path: /
+      hostOnly: true
+      creation: 2025-04-14T17:07:11.703Z
+      lastAccessed: 2025-04-14T17:07:49.081Z
+      sameSite: lax
+      id: a1cd4371-acf6-4854-92b0-f6072d559cc4
+    - key: laravel_session
+      value: eyJpdiI6InBRcEtrbitxd1JKTEZsTFpBaUJJdVE9PSIsInZhbHVlIjoiemxjZGpFcmtLYkxRcnNvSjRBb1JTOEFjcnYzOHdBZnNkcHBxbXFQNXBrS2Uzd29OYW1PR2JGNVgzWHlXNlVpQWt0aUtLZFVkaG1rellYQ3Y5WFdLNkRreDZXVGVtQUtvOU8xajNwakg1QURsMUJqdUUwaktjTmd6MXQycEhUc3QiLCJtYWMiOiI1ZDE1ZmU3NTk2NGUwNmE2YmI5ZjcyZDk4ZTQwZmJkOTViMzBjYTNjM2U0NjFjODc2MGEyNjMzNGU5YTk0NWY3IiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: 192.168.0.181
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-04-14T17:07:11.703Z
+      lastAccessed: 2025-04-14T17:07:49.081Z
+      sameSite: lax
+      id: 1520072e-8e51-4e4f-9d19-166aee6ce73e
+environments:
+  name: Base Environment
+  meta:
+    id: env_a415dfcecde644b6a3e5ce0ef119be59
+    created: 1728402361160
+    modified: 1728402361160
+    isPrivate: false

@@ -1,0 +1,1104 @@
+type: collection.insomnia.rest/5.0
+name: NEST
+meta:
+  id: wrk_f14b001ee83d465680777785bd73e68b
+  created: 1743722488846
+  modified: 1743722488846
+collection:
+  - name: NEST
+    meta:
+      id: fld_e6d727a1b5e741dba574aad57def60f7
+      created: 1726183388916
+      modified: 1726183388916
+      sortKey: -1726183387758
+    children:
+      - name: PPE
+        meta:
+          id: fld_dd0a94ea85744dab9eb5cd4443ca57f9
+          created: 1726183388918
+          modified: 1726488179667
+          sortKey: -1726184667384
+        children:
+          - name: Auth
+            meta:
+              id: fld_aa3151dcf8614a88b5f8b9f3e3b11dbd
+              created: 1726183388923
+              modified: 1726184701558
+              sortKey: -1726183387842
+            children:
+              - url: http://localhost:3000/api/v1/users/profile
+                name: Profile
+                meta:
+                  id: req_cb65f6af030c42d188b78f4e4ad73359
+                  created: 1726183388926
+                  modified: 1726462277082
+                  isPrivate: false
+                  sortKey: -1726183387755
+                method: GET
+                headers:
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:3000/api/v1/auth/login
+                name: Login
+                meta:
+                  id: req_3554ba942d244e7d952a43615303a0b7
+                  created: 1726183388933
+                  modified: 1726488172421
+                  isPrivate: false
+                  sortKey: -1726183387754
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                    	"email": "gary",
+                    	"password": "yakys7"
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:3000/api/v1/auth/signup
+                name: Signup
+                meta:
+                  id: req_1ab0488f62c54959abbeda7a2f687b4d
+                  created: 1726183388935
+                  modified: 1726450882821
+                  isPrivate: false
+                  sortKey: -1726183387753
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                    	"username": "GARY_10077835",
+                    	"password": "2001-12-01"
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:3000/api/v1/auth/register
+                name: Register
+                meta:
+                  id: req_548a5bc97db64a61bf825832704ab69a
+                  created: 1726450888716
+                  modified: 1726462080643
+                  isPrivate: false
+                  sortKey: -1726183387752
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                    	"tipoDocumento": 1,
+                    	"numeroDocumento": "10077835",
+                    	"expedido": "LP",
+                    	"fecha_nacimiento": "2001-12-01",
+                    	"nombres": "Gary Limbert",
+                    	"paterno": "Apaza",
+                    	"materno": "Mamani",
+                    	"genero": "M",
+                    	"username": "gcoddev",
+                    	"email": "gary@upea.bo",
+                    	"password": "yakys7"
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+          - name: User
+            meta:
+              id: fld_2534195485da4fc39672a2e090a9906b
+              created: 1726183388952
+              modified: 1726183388952
+              sortKey: -1726183387742
+            children:
+              - url: http://localhost:3000/api/v1/users
+                name: Users
+                meta:
+                  id: req_246e56b33e9f43f99722939b3f6d1485
+                  created: 1726183388956
+                  modified: 1726183388956
+                  isPrivate: false
+                  sortKey: -1726183387741
+                method: GET
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+          - name: Datos
+            meta:
+              id: fld_63dc0bb730ff433cb4c2a7576c5aa037
+              created: 1726183388957
+              modified: 1726184744325
+              sortKey: -1726183387740
+            children:
+              - name: Moneda
+                meta:
+                  id: fld_b229dfb11d1049aea624fcb6b5b17272
+                  created: 1726183388958
+                  modified: 1726183388958
+                  sortKey: -1726183387739
+                children:
+                  - url: http://localhost:3000/api/v1/datos/moneda/
+                    name: GetMoneda
+                    meta:
+                      id: req_1175c6aa6a554ce9ba159cba8464d871
+                      created: 1726183388959
+                      modified: 1726183388959
+                      isPrivate: false
+                      sortKey: -1726183387738
+                    method: GET
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+                  - url: http://localhost:3000/api/v1/datos/moneda
+                    name: PostMoneda
+                    meta:
+                      id: req_21d670f3c9e74ed293777e3a453130b5
+                      created: 1726183388961
+                      modified: 1726183388961
+                      isPrivate: false
+                      sortKey: -1726183387737
+                    method: POST
+                    body:
+                      text: |-
+                        {
+                            "nombre": "Dolar",
+                            "abreviacion": "USD"
+                        }
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+                  - url: http://localhost:3000/api/v1/datos/moneda/2
+                    name: PatchMoneda
+                    meta:
+                      id: req_4f5a7310045c42fc918bbf88c268d934
+                      created: 1726183388962
+                      modified: 1726183388962
+                      isPrivate: false
+                      sortKey: -1726183387736
+                    method: PATCH
+                    body:
+                      text: |-
+                        {
+                            "abreviacion": "USD"
+                        }
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+                  - url: http://localhost:3000/api/v1/datos/moneda/2
+                    name: DeleteMoneda
+                    meta:
+                      id: req_51d990fd02724b26a49e37a96f21f7bc
+                      created: 1726183388962
+                      modified: 1726183388962
+                      isPrivate: false
+                      sortKey: -1726183387735
+                    method: DELETE
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+              - name: UnidadMedida
+                meta:
+                  id: fld_245e82191bae480f9bd3ee4e56c13c9d
+                  created: 1726183388963
+                  modified: 1726183388963
+                  sortKey: -1726183387734
+                children:
+                  - url: http://localhost:3000/api/v1/datos/unidad-medida/
+                    name: GetUnidadMedida
+                    meta:
+                      id: req_46cb746704e14d65b5888dfc7e41efd7
+                      created: 1726183388963
+                      modified: 1726183388963
+                      isPrivate: false
+                      sortKey: -1726183387733
+                    method: GET
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+                  - url: http://localhost:3000/api/v1/datos/moneda/2
+                    name: PatchMoneda
+                    meta:
+                      id: req_3d090eac7e564deda5cd12e12a448f85
+                      created: 1726183388964
+                      modified: 1726183388964
+                      isPrivate: false
+                      sortKey: -1726183387731
+                    method: PATCH
+                    body:
+                      text: |-
+                        {
+                            "abreviacion": "USD"
+                        }
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+                  - url: http://localhost:3000/api/v1/datos/moneda
+                    name: PostMoneda
+                    meta:
+                      id: req_db312edcdc1940f5b3958b958e983762
+                      created: 1726183388964
+                      modified: 1726183388964
+                      isPrivate: false
+                      sortKey: -1726183387732
+                    method: POST
+                    body:
+                      text: |-
+                        {
+                            "nombre": "Dolar",
+                            "abreviacion": "USD"
+                        }
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+                  - url: http://localhost:3000/api/v1/datos/moneda/2
+                    name: DeleteMoneda
+                    meta:
+                      id: req_bb90fbc4a0d346808ed3203df2b9ea5d
+                      created: 1726183388965
+                      modified: 1726183388965
+                      isPrivate: false
+                      sortKey: -1726183387730
+                    method: DELETE
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+              - name: MetodoPago
+                meta:
+                  id: fld_426c3db12448457185ef7a195c4e3575
+                  created: 1726183388965
+                  modified: 1726183388965
+                  sortKey: -1726183387729
+                children:
+                  - url: http://localhost:3000/api/v1/datos/metodo-pago/
+                    name: GetMetodoPago
+                    meta:
+                      id: req_6b627e8912524b76a95b71640716e061
+                      created: 1726183388965
+                      modified: 1726183388965
+                      isPrivate: false
+                      sortKey: -1726183387728
+                    method: GET
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+                  - url: http://localhost:3000/api/v1/datos/metodo-pago/1
+                    name: PatchMetodoPago
+                    meta:
+                      id: req_b42874786384499dad0a89608d3ce1ae
+                      created: 1726183388966
+                      modified: 1726183388966
+                      isPrivate: false
+                      sortKey: -1726183387726
+                    method: PATCH
+                    body:
+                      text: |-
+                        {
+                            "nombre": "USD"
+                        }
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+                  - url: http://localhost:3000/api/v1/datos/metodo-pago/
+                    name: PostMetodoPago
+                    meta:
+                      id: req_e3990424527b492abb42caae82a25699
+                      created: 1726183388966
+                      modified: 1726183388966
+                      isPrivate: false
+                      sortKey: -1726183387727
+                    method: POST
+                    body:
+                      text: |-
+                        {
+                            "nombre": "Dolar"
+                        }
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+                  - url: http://localhost:3000/api/v1/datos/metodo-pago/1
+                    name: DeleteMetodoPago
+                    meta:
+                      id: req_7d1fa45333624eef86208b50a6940279
+                      created: 1726183388967
+                      modified: 1726183388967
+                      isPrivate: false
+                      sortKey: -1726183387725
+                    method: DELETE
+                    settings:
+                      renderRequestBody: true
+                      encodeUrl: true
+                      followRedirects: global
+                      cookies:
+                        send: true
+                        store: true
+                      rebuildPath: true
+          - name: TESORO
+            meta:
+              id: fld_8ef9b5b0778a44c5b68b599a15fd693f
+              created: 1726183388972
+              modified: 1726183388972
+              sortKey: -1726183387724
+            children:
+              - url: http://localhost:3000/api/v1/persona/216704
+                name: Concepto
+                meta:
+                  id: req_6e272729f5fc48b78e73f51ec2beba6b
+                  created: 1726183388973
+                  modified: 1726438895701
+                  isPrivate: false
+                  sortKey: -1726183387723
+                method: GET
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:3000/api/v1/unidad-movimiento
+                name: UnidadMovimiento
+                meta:
+                  id: req_74deb6b388bd4b67af46b97f392ac6f2
+                  created: 1726183388974
+                  modified: 1726184582397
+                  isPrivate: false
+                  sortKey: -1726183387722
+                method: GET
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+          - name: BASE_UPEA
+            meta:
+              id: fld_f9a456a0b7694420ab086040a71d68e4
+              created: 1726439291651
+              modified: 1726439291651
+              sortKey: -1726439291652
+            children:
+              - url: http://localhost:3000/api/v1/persona
+                name: Persona
+                meta:
+                  id: req_e4cec8c61e85420bb011ff84d5d6873d
+                  created: 1726439295559
+                  modified: 1726443530324
+                  isPrivate: false
+                  sortKey: -1726439295559
+                method: POST
+                body:
+                  mimeType: application/json
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/10.0.0
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+          - name: Orden
+            meta:
+              id: fld_a4417cbbf7fc40f29c9934fdddba473a
+              created: 1726463039491
+              modified: 1726463055630
+              sortKey: -1726463039491
+            children:
+              - url: http://localhost:3000/api/v1/orden
+                name: Create
+                meta:
+                  id: req_92c6d942a0d3414895e023c5bc29f5cb
+                  created: 1726463043301
+                  modified: 1726489009650
+                  isPrivate: false
+                  sortKey: -1726463043301
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                    	"descripcion": "des",
+                    	"metaDatosTransaccion": "meta",
+                    	"codigoOrden": "ABC001",
+                    	"datosPago": {
+                    		"nombresCliente": "Gary",
+                    		"apellidosCliente": "Apaza",
+                    		"tipoDocumentoCliente": 1,
+                    		"numeroDocumentoCliente": "10077835",
+                    		"fechaNacimientoCliente": "2001-12-01",
+                    		"cuentaBancaria": "123",
+                    		"montototal": 2000.00,
+                    		"moneda": "BOB",
+                    		"tipoCambioMoneda": 1,
+                    		"correo": "gary@upea.bo"
+                    	},
+                    	"productos": [
+                    		{
+                    			"actividadEconomica": "",
+                    			"codigoSin": "",
+                    			"codigo": "",
+                    			"descripcion": "",
+                    			"precioUnitario": 250,
+                    			"unidadMedida": 2,
+                    			"montoDescuento": 0,
+                    			"cantidad": 1
+                    		},
+                    		{
+                    			"actividadEconomica": "",
+                    			"codigoSin": "",
+                    			"codigo": "",
+                    			"descripcion": "",
+                    			"precioUnitario": 250,
+                    			"unidadMedida": 2,
+                    			"montoDescuento": 0,
+                    			"cantidad": 1
+                    		}
+                    	],
+                    	"facturacion": {
+                    		"municipio": "El Alto",
+                    		"departamento": "",
+                    		"telefono": "",
+                    		"razonSocial": "",
+                    		"tipoDocumentoIdentidad": 1,
+                    		"documentoIdentidad": "",
+                    		"complemento": "",
+                    		"montoTotal": 3000,
+                    		"montoDescuentoAdicional": 0,
+                    		"montoGiftcard": 0,
+                    		"tipoCambio": 1,
+                    		"documentoSector": 1
+                    	}
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/10.0.0
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+        authentication:
+          type: bearer
+          disabled: false
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJVMkZzZEdWa1gxL0N0WHpSdVBsN0pFQ2VGbVJQOGtEMUgraGgzOTcwK0FrPSIsInN1YiI6eyJ1c2VybmFtZSI6ImdhcnkiLCJlbWFpbCI6Imdhcnk3YXBhemFAZ21haWwuY29tIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNzI2NDg4MTczLCJleHAiOjE3MjY0OTE3NzN9.szgvpNlMQONBzKiUXgW-9car9XYpCckl774ENad4NmE
+      - name: PORTFOLIO
+        meta:
+          id: fld_76cd7c4160ea4c46bf44a8218de45174
+          created: 1726183388976
+          modified: 1726183388976
+          sortKey: -1726183387721
+        children:
+          - url: http://localhost:3000/visitas
+            name: GETVISITAS
+            meta:
+              id: req_8a0e83f343c3453989e28f9a88bebb0d
+              created: 1726183388977
+              modified: 1726183388977
+              isPrivate: false
+              sortKey: -1726183387720
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/9.3.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/visitas
+            name: POSTVISITA
+            meta:
+              id: req_d7341e7fc526493fbd6d2195eb7982a5
+              created: 1726183388979
+              modified: 1726183388979
+              isPrivate: false
+              sortKey: -1726183387719
+            method: POST
+            headers:
+              - name: User-Agent
+                value: insomnia/9.3.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: PORTFOLIO PROD
+        meta:
+          id: fld_851a716878c94c73b1b3e727b27a3a2e
+          created: 1726183388979
+          modified: 1726183388979
+          sortKey: -1726183387718
+        children:
+          - url: http://localhost:3002/visitas
+            name: GETVISITAS
+            meta:
+              id: req_0073e8ff93fd42ac8ec6ee80b05a15f2
+              created: 1726183388980
+              modified: 1726183388980
+              isPrivate: false
+              sortKey: -1726183387717
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/9.3.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3002/visitas
+            name: POSTVISITA
+            meta:
+              id: req_467fd54477984229bdac4e6332801654
+              created: 1726183388980
+              modified: 1726183388980
+              isPrivate: false
+              sortKey: -1726183387716
+            method: POST
+            headers:
+              - name: User-Agent
+                value: insomnia/9.3.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: PORTFOLIO RAILWAY
+        meta:
+          id: fld_5b324474454242e19c64d2b6baccfe37
+          created: 1726183388981
+          modified: 1726183388981
+          sortKey: -1726183387715
+        children:
+          - url: https://portfolio.gcod.dev/visitas
+            name: GETVISITAS
+            meta:
+              id: req_70df33465c184ecfa969e5f82d62494e
+              created: 1726183388981
+              modified: 1726183388981
+              isPrivate: false
+              sortKey: -1726183387714
+            method: GET
+            parameters:
+              - disabled: false
+            headers:
+              - name: User-Agent
+                value: insomnia/9.3.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://portfolio.gcod.dev/visitas
+            name: POSTVISITA
+            meta:
+              id: req_1516fde85bb64a279a130aa687b8027c
+              created: 1726183388982
+              modified: 1726183388982
+              isPrivate: false
+              sortKey: -1726183387713
+            method: POST
+            headers:
+              - name: User-Agent
+                value: insomnia/9.3.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Products
+        meta:
+          id: fld_0f33c013a596443abe3d4d3f6faf33dc
+          created: 1726183388982
+          modified: 1726183388982
+          sortKey: -1726183387712
+        children:
+          - url: http://localhost:3000/products/1
+            name: Delete
+            meta:
+              id: req_970ad7638c244cebb4c87730c394e26e
+              created: 1726183388982
+              modified: 1726183388982
+              isPrivate: false
+              sortKey: -1726183387711
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/9.2.0
+              - name: Accept
+                value: application/json
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/products/1
+            name: Update
+            meta:
+              id: req_03da68fec1344a3a81ffed406a0bb67c
+              created: 1726183388983
+              modified: 1726183388983
+              isPrivate: false
+              sortKey: -1726183387710
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                		"name": "Product 1 edit"
+                	}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/9.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/products
+            name: Create
+            meta:
+              id: req_36b6b1e79ebf477ebfc12d57e28f7c59
+              created: 1726183388983
+              modified: 1726183388983
+              isPrivate: false
+              sortKey: -1726183387709
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "Product 2",
+                	"description": "Product description",
+                	"price": 10,
+                	"stock": 50,
+                	"image": "product1.jpg",
+                	"otro": "sdf"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/9.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/products/
+            name: Get
+            meta:
+              id: req_42e6af2769fa4a3f83f900a421ccf605
+              created: 1726183388989
+              modified: 1726183388989
+              isPrivate: false
+              sortKey: -1726183387708
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/9.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Categories
+        meta:
+          id: fld_ec1cdcec604b46c2ab38baa08d57a78c
+          created: 1726183388991
+          modified: 1726183388991
+          sortKey: -1726183387707
+        children:
+          - url: http://localhost:3000/categories
+            name: Create
+            meta:
+              id: req_708d4b8bcc0a4ab98d3ef8145c09a60a
+              created: 1726183388992
+              modified: 1726183388992
+              isPrivate: false
+              sortKey: -1726183387706
+            method: POST
+            headers:
+              - name: User-Agent
+                value: insomnia/9.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: CURSO
+        meta:
+          id: fld_b74f33a9c1df4c69b073e6f85b3f7301
+          created: 1726184667284
+          modified: 1726184667284
+          sortKey: -1726184667284
+        children:
+          - name: Cat
+            meta:
+              id: fld_0ff7ce1ed0c744a19238b2cfd980f3a3
+              created: 1726183388939
+              modified: 1726184678868
+              sortKey: -1726184676607
+            children:
+              - url: http://localhost:3000/api/v1/cats/
+                name: Cat
+                meta:
+                  id: req_34d994200efa4c998887339ffa8eaade
+                  created: 1726183388941
+                  modified: 1726183388941
+                  isPrivate: false
+                  sortKey: -1726183387751
+                method: GET
+                headers:
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:3000/api/v1/cats
+                name: Cat
+                meta:
+                  id: req_261ae6ec1b364c33961a3911382d69cb
+                  created: 1726183388942
+                  modified: 1726183388942
+                  isPrivate: false
+                  sortKey: -1726183387750
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                    	"name": "Milaneso",
+                    	"age": 1,
+                    	"breed": "Angora"
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:3000/api/v1/cats/6
+                name: Cat
+                meta:
+                  id: req_654f5345c2e74d26b7e7ad90a09f94b0
+                  created: 1726183388945
+                  modified: 1726183388945
+                  isPrivate: false
+                  sortKey: -1726183387749
+                method: PATCH
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                    	"name": "Milaneso",
+                        "breed": "Bambino"
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:3000/api/v1/cats/1
+                name: Cat
+                meta:
+                  id: req_94cbbeefdf644873986f58c3eb86a273
+                  created: 1726183388946
+                  modified: 1726183388946
+                  isPrivate: false
+                  sortKey: -1726183387748
+                method: DELETE
+                headers:
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+          - name: Breed
+            meta:
+              id: fld_dbc0afbbbb1b4e0d9d69b7a78b9133f1
+              created: 1726183388947
+              modified: 1726184694022
+              sortKey: -1726184676707
+            children:
+              - url: http://localhost:3000/api/v1/breeds/
+                name: BreedAll
+                meta:
+                  id: req_038986cdf32f4fe4807e4e58f42e8bb0
+                  created: 1726183388948
+                  modified: 1726183388948
+                  isPrivate: false
+                  sortKey: -1726183387746
+                method: GET
+                headers:
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:3000/api/v1/breeds
+                name: Breed
+                meta:
+                  id: req_be36e08523b8451a9d30fffdc8285025
+                  created: 1726183388948
+                  modified: 1726183388948
+                  isPrivate: false
+                  sortKey: -1726183387745
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                    	"name": "Bambino"
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:3000/api/v1/breeds/6
+                name: Breed
+                meta:
+                  id: req_948aed6369cf459c862651e65cee444f
+                  created: 1726183388949
+                  modified: 1726183388949
+                  isPrivate: false
+                  sortKey: -1726183387744
+                method: PATCH
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                    	"name": "Otro"
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:3000/api/v1/breeds/3
+                name: Breed
+                meta:
+                  id: req_1fc43e4834fc42b3a3dd47b167a2f2e0
+                  created: 1726183388950
+                  modified: 1726183388950
+                  isPrivate: false
+                  sortKey: -1726183387743
+                method: DELETE
+                headers:
+                  - name: User-Agent
+                    value: insomnia/9.3.3
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_eb61b4c950474d2b9fffbea6f7aa3d31
+    created: 1726183546995
+    modified: 1726183546995
+environments:
+  name: Base Environment
+  meta:
+    id: env_414901e4284a4895b49e6a986afb7cdc
+    created: 1726183546882
+    modified: 1726183546882
+    isPrivate: false

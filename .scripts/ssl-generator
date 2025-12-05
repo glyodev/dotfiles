@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# =====================================
+# SSL Generator con Certbot + DNS Manual
+# =====================================
+
+# Email por defecto
+DEFAULT_EMAIL="admin@garycdev.com"
+EMAIL="$DEFAULT_EMAIL"
+DOMAINS=()
+
+# --- Parseo de argumentos ---
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --email)
+      EMAIL="$2"
+      shift 2
+      ;;
+    *)
+      DOMAINS+=("$1")
+      shift
+      ;;
+  esac
+done
+
+# Validación
+if [ ${#DOMAINS[@]} -eq 0 ]; then
+  echo "❌ Debes especificar al menos un dominio."
+  echo "Uso: ssl-generator dominio1 dominio2 ... [--email correo@ejemplo.com]"
+  exit 1
+fi
+
+# Mostrar info
+echo "📋 Generando SSL para:"
+for domain in "${DOMAINS[@]}"; do
+  echo " - $domain"
+done
+echo "📧 Usando email: $EMAIL"
+echo
+
+# Construir parámetros -d "dominio"
+DOMAIN_ARGS=()
+for domain in "${DOMAINS[@]}"; do
+  DOMAIN_ARGS+=("-d" "$domain")
+done
+
+# Ejecutar Certbot
+sudo certbot certonly \
+  --manual \
+  --preferred-challenges dns \
+  --agree-tos \
+  -m "$EMAIL" \
+  "${DOMAIN_ARGS[@]}"
