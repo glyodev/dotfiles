@@ -1,0 +1,158 @@
+set $mod Mod4
+set $alt Mod1
+bindsym $mod+Shift+r restart
+
+font pango:monospace 9
+
+# --- NO barra ---
+bar {
+    mode invisible
+		tray_output none
+}
+
+# --- GAPS ---
+gaps inner 7
+gaps outer 0
+
+# --- Focus ---
+focus_follows_mouse yes
+mouse_warping none
+
+# --- Terminales ---
+bindsym $mod+Return exec alacritty
+bindsym Ctrl+Alt+t exec xfce4-terminal
+
+# --- File manager ---
+bindsym $mod+e exec thunar
+
+# --- Launcher ---
+bindsym $mod+m exec rofi -show drun combi -icon-theme 'Win11' -show-icons
+
+# --- Logout ---
+bindsym $mod+x exec archlinux-logout
+
+# --- Workspaces ---
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+
+workspace $ws1 output eDP-1
+workspace $ws2 output eDP-1
+workspace $ws3 output eDP-1
+workspace $ws4 output eDP-1
+workspace $ws5 output HDMI-1
+workspace $ws6 output HDMI-1
+workspace $ws7 output HDMI-1
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+
+# --- Navegación ---
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+
+# --- Layout ---
+bindsym $mod+space layout toggle split
+bindsym $mod+Tab fullscreen toggle
+bindsym $mod+Shift+t layout stacking
+bindsym $mod+t layout tabbed
+
+# --- Floating ---
+bindsym $mod+s floating toggle
+#bindsym $mod+space focus mode_toggle
+
+# --- Resize ---
+#mode "resize" {
+#    bindsym Left resize shrink width 20 px
+#    bindsym Right resize grow width 20 px
+#    bindsym Up resize shrink height 20 px
+#    bindsym Down resize grow height 20 px
+#    bindsym Escape mode "default"
+#}
+#bindsym $mod+r mode "resize"
+
+# Resize directo tipo bspwm
+bindsym $mod+Control+Left resize shrink width 20 px
+bindsym $mod+Control+Right resize grow width 20 px
+bindsym $mod+Control+Up resize shrink height 20 px
+bindsym $mod+Control+Down resize grow height 20 px
+
+floating_modifier $mod
+
+# --- Cerrar ---
+bindsym $mod+q kill
+for_window [class="Gimp"] move to workspace 8, floating enable
+for_window [class="Chromium"] move to workspace 2
+for_window [class="Galculator"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Arandr"] floating enable
+for_window [class="Waydroid"] floating enable
+for_window [class="Proton-authenticator"] floating enable
+
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+bindsym XF86AudioRaiseVolume exec pamixer --increase 2
+bindsym XF86AudioLowerVolume exec pamixer --decrease 2
+bindsym XF86AudioMute exec pamixer --toggle-mute
+
+bindsym Print exec xfce4-screenshooter
+bindsym Shift+Print exec xfce4-screenshooter -r
+
+for_window [class=".*"] border pixel 1 
+
+#bindsym $alt+Tab exec --no-startup-id ~/.config/i3/scripts/i3-focus-last-window
+#bindsym $alt+Shift+Tab exec --no-startup-id ~/.config/i3/scripts/i3-focus-last-window --reverse
+
+
+# Polybar
+#exec --no-startup-id sleep 1 && ~/.config/i3/polybar/launch.sh
+#exec_always --no-startup-id \
+  #bash -c 'until i3-msg -t get_workspaces >/dev/null 2>&1; do sleep 0.2; done; ~/.config/i3/polybar/launch.sh'
+
+# --- Autostart ---
+exec --no-startup-id xset s 600 600
+exec --no-startup-id xset dpms 600 600 900
+exec --no-startup-id xss-lock -- ~/.config/bspwm/scripts/lock.sh
+exec --no-startup-id wmname LG3D
+
+# Script monitores (el mismo que usas)
+exec --no-startup-id ~/.screenlayout/resolucion.sh
+
+# Extras
+
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
+exec --no-startup-id /usr/lib/xdg-desktop-portal-gtk
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xfce4-clipman
+exec --no-startup-id picom --backend glx --vsync 
+exec --no-startup-id nitrogen --restore
+
+
+#exec --no-startup-id ~/.config/i3/polybar/launch.sh
+exec --no-startup-id bash -c 'sleep 3 && ~/.config/i3/polybar/launch.sh'
+

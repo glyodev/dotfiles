@@ -61,6 +61,13 @@
 !.config/bspwm/scripts/polybar-mpris
 !.config/bspwm/scripts/polybar-mpris/*
 
+!.config/i3
+!.config/i3/*
+!.config/i3/polybar
+!.config/i3/polybar/*
+!.config/i3/scripts
+!.config/i3/scripts/*
+
 !.config/polybar
 !.config/polybar/*
 

@@ -34,5 +34,11 @@ if [[ "$DESKTOP_SESSION" == "bspwm" || "$XDG_SESSION_DESKTOP" == "bspwm" || "$XD
 	bspc wm -r
 fi
 
+if [[ "$DESKTOP_SESSION" == "i3" || "$XDG_SESSION_DESKTOP" == "i3" || "$XDG_CURRENT_DESKTOP" == "i3" ]]; then
+	###########################################################
+	setxkbmap latam
+	###########################################################
+fi
+
 #export QT_QPA_PLATFORMTHEME=gtk2
 export QT_QPA_PLATFORMTHEME=qt5ct
