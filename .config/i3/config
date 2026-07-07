@@ -30,8 +30,8 @@ bindsym $mod+m exec rofi -show drun combi -icon-theme 'Reversal' -show-icons
 bindsym $mod+$alt+m exec rofi -modi emoji -show emoji
 
 # --- Menus ---
-bindsym $mod+x exec ~/.config/rofi/scripts/power.sh
-bindsym $mod+$alt+x exec ~/.config/rofi/scripts/theme.sh
+bindsym $alt+F4 exec ~/.config/rofi/scripts/power.sh
+bindsym $mod+x exec ~/.config/rofi/scripts/theme.sh
 #bindsym $mod+l exec ~/.config/polybar/scripts/lock.sh
 
 

@@ -7,6 +7,7 @@ theme='menu'
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
+currect=''
 
 # Options
 dark='󰖔 dark theme'
@@ -19,11 +20,21 @@ light_theme='WhiteSur-Light'
 yes=' yes'
 no='󰜺 no'
 
+current_theme=$(grep "^gtk-theme-name=" ~/.config/gtk-3.0/settings.ini | cut -d= -f2)
+mode=""
+if systemctl --user is-enabled --quiet auto-theme.timer; then
+    mode="Auto"
+elif [[ "$current_theme" == "$light_theme" ]]; then
+    mode="Light"
+else
+    mode="Dark"
+fi
+
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
 		-p "$host" \
-		-mesg "Uptime: $uptime" \
+		-mesg "Current: $current_theme • $mode" \
 		-theme-str 'textbox-prompt-colon {str: "󰔎";}' \
 		-theme-str 'listview {lines: 3;}' \
 		-theme ${dir}/${theme}.rasi
@@ -57,30 +68,31 @@ run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--dark' ]]; then
-			sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$dark_theme/" ~/.config/gtk-3.0/settings.ini
-			sleep 0.2
-			i3-msg restart
-			sleep 0.3
-			notify-send "Dark theme"
-			sleep 0.2
-			systemctl --user stop auto-theme.timer
-			systemctl --user disable auto-theme.timer
+    	systemctl --user disable --now auto-theme.timer
+
+    	sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$dark_theme/" \
+        ~/.config/gtk-3.0/settings.ini
+
+    	sleep 0.2
+    	i3-msg restart
+    	sleep 0.3
+
+    	notify-send "Dark theme"
 		elif [[ $1 == '--light' ]]; then
-			sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$light_theme/" ~/.config/gtk-3.0/settings.ini
-			sleep 0.2
-			i3-msg restart
-			sleep 0.3
-			notify-send "Light theme"
-			sleep 0.2
-			systemctl --user stop auto-theme.timer
-			systemctl --user disable auto-theme.timer
+    	systemctl --user disable --now auto-theme.timer
+
+    	sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$light_theme/" \
+        ~/.config/gtk-3.0/settings.ini
+
+    	sleep 0.2
+    	i3-msg restart
+    	sleep 0.3
+
+    	notify-send "Light theme"
 		elif [[ $1 == '--auto' ]]; then
-			systemctl --user start auto-theme.timer
-			systemctl --user enable auto-theme.timer
+			systemctl --user enable --now auto-theme.timer
 			systemctl --user restart auto-theme.service
-			sleep 0.2
-			i3-msg restart
-			sleep 0.3
+
 			notify-send "Auto theme enabled"
 		fi
 	else

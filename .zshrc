@@ -42,3 +42,5 @@ for file in "$HOME/.config/shell/"*.sh "$HOME/.config/shell/apps/"*.sh; do
     [ -r "$file" ] && source "$file"
 done
 unset file
+
+source /home/gary/.config/broot/launcher/bash/br

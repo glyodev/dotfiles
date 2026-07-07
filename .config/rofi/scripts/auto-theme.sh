@@ -9,7 +9,7 @@ if systemctl --user is-enabled --quiet auto-theme.timer; then
 
     hour=$(date +%H)
 
-    if (( hour >= 7 && hour < 19 )); then
+    if (( hour >= 7 && hour < 18 )); then
         target="$light_theme"
     else
         target="$dark_theme"
@@ -24,4 +24,14 @@ if systemctl --user is-enabled --quiet auto-theme.timer; then
 fi
 
 sleep 0.2
-i3-msg restart
+
+changed=false
+
+if [[ "$current" != "$target" ]]; then
+    sed -i "s/^gtk-theme-name=.*/gtk-theme-name=$target/" "$SETTINGS"
+    changed=true
+fi
+
+if $changed; then
+    i3-msg restart
+fi

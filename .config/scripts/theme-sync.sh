@@ -21,6 +21,7 @@ if [[ "$theme" == *Light* ]]; then
     feh --bg-scale ~/Pictures/Wallpapers/fondo3.jpg
 else
 
+		# Polybar
     ln -sf ~/.config/polybar/dark.ini ~/.config/polybar/colors.ini
 
     # Alacritty
