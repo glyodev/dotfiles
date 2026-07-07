@@ -1,0 +1,215 @@
+set $mod Mod4
+set $alt Mod1
+bindsym $mod+Shift+r restart
+
+font pango:monospace 9
+
+# --- NO barra ---
+bar {
+    mode invisible
+		tray_output none
+}
+
+# --- GAPS ---
+gaps inner 7
+gaps outer 0
+
+# --- Focus ---
+focus_follows_mouse yes
+mouse_warping none
+
+# --- Terminales ---
+bindsym $mod+Return split h; exec alacritty
+bindsym $mod+Ctrl+Return split v; exec alacritty
+
+# --- File manager ---
+bindsym $mod+e exec thunar
+
+# --- Launcher ---
+bindsym $mod+m exec rofi -show drun combi -icon-theme 'Reversal' -show-icons
+bindsym $mod+$alt+m exec rofi -modi emoji -show emoji
+
+# --- Menus ---
+bindsym $mod+x exec ~/.config/rofi/scripts/power.sh
+bindsym $mod+$alt+x exec ~/.config/rofi/scripts/theme.sh
+#bindsym $mod+l exec ~/.config/polybar/scripts/lock.sh
+
+
+# --- Workspaces ---
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+
+workspace $ws1 output eDP
+workspace $ws2 output eDP
+workspace $ws3 output eDP
+workspace $ws4 output eDP
+workspace $ws5 output HDMI-A-0
+workspace $ws6 output HDMI-A-0
+workspace $ws7 output HDMI-A-0
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+
+
+# --- Navegación ---
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+
+# --- Layout ---
+bindsym $mod+$alt+space layout toggle split
+bindsym $mod+Tab fullscreen toggle
+bindsym $mod+Shift+t layout stacking
+bindsym $mod+t layout tabbed
+
+# --- Floating ---
+bindsym $mod+s floating toggle
+
+
+
+# Resize directo
+bindsym $mod+Control+Left resize shrink width 20 px
+bindsym $mod+Control+Right resize grow width 20 px
+bindsym $mod+Control+Up resize shrink height 20 px
+bindsym $mod+Control+Down resize grow height 20 px
+
+floating_modifier $mod
+
+# --- Cerrar ---
+bindsym $mod+q kill
+
+# --- Cambiar teclado ---
+bindsym $mod+space exec bash -c 'setxkbmap -query | grep -q "layout.*latam" && setxkbmap us -variant altgr-intl || setxkbmap latam'
+
+# --- Ventanas especiales ---
+for_window [class="Gimp"] move to workspace 8, floating enable
+for_window [class="Chromium"] move to workspace 2
+for_window [class="Galculator"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Arandr"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Proton-authenticator"] floating enable
+for_window [class="Engrampa"] floating enable
+
+# --- Brillo ---
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+# --- Audio ---
+bindsym XF86AudioRaiseVolume exec pamixer --increase 2 && notify-send -r 9999 -i audio-volume-high "Volume + $(pamixer --get-volume)%"
+bindsym XF86AudioLowerVolume exec pamixer --decrease 2 && notify-send -r 9999 -i audio-volume-low "Volume - $(pamixer --get-volume)%"
+bindsym XF86AudioMute exec pamixer --toggle-mute
+
+# --- Atajos teclado ---
+bindsym Print exec xfce4-screenshooter
+bindsym Shift+Print exec xfce4-screenshooter -r
+bindsym Shift+Ctrl+Print exec xfce4-screenshooter -f
+bindsym $mod+Control+R exec polybar-msg cmd restart
+for_window [class=".*"] border pixel 1 
+
+
+
+
+# i3 alt tab
+exec --no-startup-id i3-focus-last server
+bindsym $alt+Tab exec --no-startup-id i3-focus-last switch
+bindsym $alt+Shift+Tab exec --no-startup-id i3-focus-last menu
+
+for_window [class=".*"] border pixel 1
+
+
+# --- Ventanas estilo bspwm
+# nuevas ventanas van dentro del contenedor actual
+for_window [class=".*"] focus
+# split por defecto
+default_orientation auto
+workspace_layout default
+# layouts útiles
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# --- Autostart ---
+#exec --no-startup-id xset dpms 540 540 900
+#exec --no-startup-id xset s 600 600
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/polybar/scripts/lock.sh
+#exec --no-startup-id xidlehook \
+#  --not-when-fullscreen \
+#  --timer 900 'systemctl suspend' ''
+
+#exec --no-startup-id wmname LG3D
+
+
+
+# Script monitores (el mismo que usas)
+#exec --no-startup-id ~/.screenlayout/resolucion.sh
+#exec --no-startup-id ~/.screenlayout/resolucion-2p.sh
+
+
+
+
+# Apps
+bindsym $mod+p exec arandr
+#bindsym $mod+Control+p exec proton-authenticator
+bindsym $mod+Shift+p exec pavucontrol
+#bindsym $mod+o exec alacritty -e ~/.scripts/dev-launcher
+
+
+
+
+
+# Extras
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
+#exec --no-startup-id /usr/lib/xdg-desktop-portal-gtk
+#exec --no-startup-id xfce4-clipman
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id picom --backend glx --vsync
+exec --no-startup-id xfce4-power-manager
+
+#exec --no-startup-id systemctl --user import-environment DISPLAY XAUTHORITY
+#exec --no-startup-id dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
+#exec --no-startup-id systemctl --user restart xdg-desktop-portal xdg-desktop-portal-gtk
+
+exec_always --no-startup-id ~/.config/scripts/theme-sync.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# --- Autostart ---
+#exec --no-startup-id xset s 600 600
+#exec --no-startup-id xset dpms 600 600 900
+#exec --no-startup-id xss-lock -- ~/.config/bspwm/scripts/lock.sh
+#exec --no-startup-id wmname LG3D
+
+# Script monitores (el mismo que usas)
+#exec --no-startup-id ~/.screenlayout/resolucion.sh
+
+
+
+
+
+# Actualizar tema al iniciar
+exec --no-startup-id ~/.config/rofi/scripts/auto-theme.sh

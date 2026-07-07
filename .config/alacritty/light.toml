@@ -1,0 +1,29 @@
+# rice-colors-light.toml
+
+[colors.primary]
+background = "#ffffff"
+foreground = "#000000"
+
+[colors.cursor]
+cursor = "#3760bf"
+text = "#ffffff"
+
+[colors.normal]
+black   = "#565a6e"
+red     = "#f52a65"
+green   = "#007C00"
+yellow  = "#8c6c3e"
+blue    = "#2e7de9"
+magenta = "#9854f1"
+cyan    = "#007197"
+white   = "#e1e2e7"
+
+[colors.bright]
+black   = "#9699a3"
+red     = "#ff4774"
+green   = "#6a8e42"
+yellow  = "#b15c00"
+blue    = "#5a8cff"
+magenta = "#b15cff"
+cyan    = "#2ea9c6"
+white   = "#ffffff"

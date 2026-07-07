@@ -1,0 +1,10 @@
+// Light colors
+* {
+    background:     #FFFFFFDD;
+    background-alt: #CCCCCCFF;
+    foreground:     #000000;
+    foreground-alt: #000000DD;
+    selected:       #61AFEFFF;
+    active:         #98C379FF;
+    urgent:         #E06C75FF;
+}

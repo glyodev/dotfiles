@@ -1,0 +1,9 @@
+[font]
+size = 7
+
+builtin_box_drawing = true
+
+normal = { family = "JetBrainsMono Nerd Font Mono", style = "Medium"}
+bold = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font Mono", style = "Bold Italic" }

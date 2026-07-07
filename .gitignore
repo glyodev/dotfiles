@@ -1,0 +1,94 @@
+# ------- Global -------
+*
+!.gitignore
+!.zshrc
+!.xprofile
+
+
+
+
+# ------- Config -------
+!.config/
+
+# Alacritty
+!.config/alacritty/
+!.config/alacritty/*.toml
+
+# Dunst
+!.config/dunst/
+!.config/dunst/*.conf
+
+# i3
+!.config/i3/
+!.config/i3/config
+
+# Picom
+!.config/picom/
+!.config/picom/*.conf
+
+# Polybar
+!.config/polybar/
+!.config/polybar/*.ini
+!.config/polybar/launch.sh
+!.config/polybar/scripts/
+!.config/polybar/scripts/*.sh
+
+# Rofi
+!.config/rofi/
+!.config/rofi/scripts/
+!.config/rofi/scripts/*.sh
+!.config/rofi/themes/
+!.config/rofi/themes/*.rasi
+!.config/rofi/themes/colors/
+!.config/rofi/themes/colors/*.rasi
+
+# Scripts
+!.config/scripts/
+!.config/scripts/*.sh
+
+# Shell
+!.config/shell/
+!.config/shell/*.sh
+!.config/shell/apps/
+!.config/shell/apps/*.sh
+
+# Systemd
+!.config/systemd/
+!.config/systemd/user/
+!.config/systemd/user/*.service
+!.config/systemd/user/*.timer
+
+# Xfce4
+!.config/xfce4/
+!.config/xfce4/xfconf/
+!.config/xfce4/xfconf/xfce-perchannel-xml/
+!.config/xfce4/xfconf/xfce-perchannel-xml/*.xml
+
+
+
+# ------- Icons -------
+!.icons/
+!.icons/*.tar.xz
+!.icons/*.zip
+
+
+
+# ------- Local/Share -------
+!.local/
+!.local/share/
+
+# Applications
+!.local/share/applications/
+!.local/share/applications/desktop
+
+# Fonts
+!.local/share/fonts/
+!.local/share/fonts/*.tar.xz
+!.local/share/fonts/*.zip
+
+
+
+# ------- Icons -------
+!.themes/
+!.themes/*.tar.xz
+!.themes/*.zip

@@ -1,0 +1,6 @@
+[Unit]
+Description=Automatic GTK Theme
+
+[Service]
+Type=oneshot
+ExecStart=/home/gary/.config/rofi/scripts/auto-theme.sh

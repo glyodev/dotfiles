@@ -1,0 +1,8 @@
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+numlockx on
+setxkbmap us -variant altgr-intl
+
+export PATH="$HOME/.local/bin:$PATH"
+export LOCK_CMD="i3lock"
+export QT_QPA_PLATFORMTHEME=qt5ct
