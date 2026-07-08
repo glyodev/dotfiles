@@ -17,6 +17,7 @@ gaps outer 0
 # --- Focus ---
 focus_follows_mouse yes
 mouse_warping none
+focus_on_window_activation focus
 
 # --- Terminales ---
 bindsym $mod+Return split h; exec alacritty
@@ -32,7 +33,7 @@ bindsym $mod+$alt+m exec rofi -modi emoji -show emoji
 # --- Menus ---
 bindsym $alt+F4 exec ~/.config/rofi/scripts/power.sh
 bindsym $mod+x exec ~/.config/rofi/scripts/theme.sh
-#bindsym $mod+l exec ~/.config/polybar/scripts/lock.sh
+bindsym $mod+l exec i3lock-fancy
 
 
 # --- Workspaces ---

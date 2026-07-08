@@ -73,8 +73,14 @@
 
 
 
-# ------- Local/Share -------
+# ------- Local -------
 !.local/
+
+# ----- Bin -----
+!.local/bin/
+!.local/bin/xflock4
+
+# -----Share -----
 !.local/share/
 
 # Applications
