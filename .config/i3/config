@@ -33,7 +33,7 @@ bindsym $mod+$alt+m exec rofi -modi emoji -show emoji
 # --- Menus ---
 bindsym $alt+F4 exec ~/.config/rofi/scripts/power.sh
 bindsym $mod+x exec ~/.config/rofi/scripts/theme.sh
-bindsym $mod+l exec i3lock-fancy
+bindsym $mod+l exec xflock4
 
 
 # --- Workspaces ---

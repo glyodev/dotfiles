@@ -1,2 +1,10 @@
 #!/bin/sh
+
+# Desactivar touchpad -> echo disabled | sudo tee /sys/devices/platform/AMDI0010:03/i2c-1/i2c-SYNA32D8:00/power/wakeup
+# Activar keyboard -> echo enabled | sudo tee /sys/devices/platform/i8042/serio0/power/wakeup
+
+if pgrep -x i3lock >/dev/null; then
+    exit 0
+fi
+
 exec i3lock-fancy
