@@ -13,10 +13,15 @@
 # Alacritty
 !.config/alacritty/
 !.config/alacritty/*.toml
+.config/alacritty/rice-colors.toml
 
 # Dunst
 !.config/dunst/
 !.config/dunst/*.conf
+
+# Fastfetch
+!.config/fastfetch
+!.config/fastfetch/*.jsonc
 
 # i3
 !.config/i3/
@@ -29,6 +34,7 @@
 # Polybar
 !.config/polybar/
 !.config/polybar/*.ini
+.config/polybar/colors.ini
 !.config/polybar/launch.sh
 !.config/polybar/scripts/
 !.config/polybar/scripts/*.sh
@@ -41,6 +47,7 @@
 !.config/rofi/themes/*.rasi
 !.config/rofi/themes/colors/
 !.config/rofi/themes/colors/*.rasi
+.config/rofi/themes/colors/colors.rasi
 
 # Scripts
 !.config/scripts/
@@ -62,7 +69,7 @@
 !.config/xfce4/
 !.config/xfce4/xfconf/
 !.config/xfce4/xfconf/xfce-perchannel-xml/
-!.config/xfce4/xfconf/xfce-perchannel-xml/*.xml
+!.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
 
 
 
@@ -93,6 +100,10 @@
 !.local/share/fonts/*.zip
 
 
+
+# ------- Screenlayout -------
+!.screenlayout
+!.screenlayout/*.sh
 
 # ------- Icons -------
 !.themes/
