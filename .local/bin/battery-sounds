@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+BAT=$(ls /sys/class/power_supply/ | grep '^BAT' | head -n1)
+AC=$(ls /sys/class/power_supply/ | grep -E '^(AC|ACAD|ADP|ADAPTER|Mains)' | head -n1)
+
+SOUND_DIR="/usr/share/sounds/freedesktop/stereo"
+
+play_sound() {
+    play -q "$SOUND_DIR/$1.oga" >/dev/null 2>&1 &
+}
+
+last_status=""
+low_notified=0
+full_notified=0
+
+while true; do
+    status=$(cat /sys/class/power_supply/$BAT/status)
+    capacity=$(cat /sys/class/power_supply/$BAT/capacity)
+
+    # Conectar / desconectar
+    if [[ "$status" != "$last_status" ]]; then
+        case "$status" in
+            Charging)
+                play_sound "power-plug"
+                ;;
+            Discharging)
+                play_sound "power-unplug"
+                ;;
+        esac
+        last_status="$status"
+    fi
+
+    # Batería baja
+    if [[ "$status" == "Discharging" && $capacity -le 15 ]]; then
+        if [[ $low_notified -eq 0 ]]; then
+            play_sound "suspend-error"
+            low_notified=1
+        fi
+    else
+        low_notified=0
+    fi
+
+    # Carga completa
+    if [[ "$status" == "Full" || "$capacity" -ge 100 ]]; then
+        if [[ $full_notified -eq 0 ]]; then
+            play_sound "complete"
+            full_notified=1
+        fi
+    else
+        full_notified=0
+    fi
+
+    sleep 5
+done

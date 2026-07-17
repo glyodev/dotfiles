@@ -1,0 +1,9 @@
+[Unit]
+Description=Battery sounds
+
+[Service]
+ExecStart=%h/.local/bin/battery-sounds
+Restart=always
+
+[Install]
+WantedBy=default.target

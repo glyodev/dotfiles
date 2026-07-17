@@ -196,7 +196,7 @@ exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
 #exec --no-startup-id systemctl --user restart xdg-desktop-portal xdg-desktop-portal-gtk
 
-exec_always --no-startup-id ~/.config/scripts/theme-sync.sh
+exec_always --no-startup-id ~/.scripts/theme-sync.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # --- Autostart ---

@@ -1,14 +1,16 @@
 # ------- Global -------
 *
 !.gitignore
-!.zshrc
+!.vimrc
 !.xprofile
+!.zshrc
 
 
 
 
 # ------- Config -------
 !.config/
+!.config/sudo-configs
 
 # Alacritty
 !.config/alacritty/
@@ -49,10 +51,6 @@
 !.config/rofi/themes/colors/*.rasi
 .config/rofi/themes/colors/colors.rasi
 
-# Scripts
-!.config/scripts/
-!.config/scripts/*.sh
-
 # Shell
 !.config/shell/
 !.config/shell/*.sh
@@ -85,7 +83,7 @@
 
 # ----- Bin -----
 !.local/bin/
-!.local/bin/xflock4
+!.local/bin/*
 
 # -----Share -----
 !.local/share/
@@ -104,6 +102,15 @@
 # ------- Screenlayout -------
 !.screenlayout
 !.screenlayout/*.sh
+
+
+
+# ------- Scripts -------
+!.scripts
+!.scripts/*.sh
+!.scripts/apps
+!.scripts/apps/*
+
 
 # ------- Icons -------
 !.themes/
