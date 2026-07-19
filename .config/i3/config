@@ -33,6 +33,7 @@ bindsym $mod+$alt+m exec rofi -modi emoji -show emoji
 # --- Menus ---
 bindsym $alt+F4 exec ~/.config/rofi/scripts/power.sh
 bindsym $mod+x exec ~/.config/rofi/scripts/theme.sh
+bindsym $mod+p exec ~/.config/rofi/scripts/screenlayout.sh
 bindsym $mod+l exec xflock4
 
 
@@ -173,8 +174,8 @@ bindsym $mod+v split v
 
 
 # Apps
-bindsym $mod+p exec arandr
-#bindsym $mod+Control+p exec proton-authenticator
+#bindsym $mod+p exec arandr
+bindsym $mod+Control+p exec proton-authenticator
 bindsym $mod+Shift+p exec pavucontrol
 #bindsym $mod+o exec alacritty -e ~/.scripts/dev-launcher
 

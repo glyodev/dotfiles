@@ -1,8 +1,6 @@
 #!/bin/sh
-
 dir="$HOME/.screenlayout"
-echo $dir 
 current=`cat "$dir/current"`
-echo $current
 
+notify-send -u low "$current established"
 exec "$dir/$current.sh"
