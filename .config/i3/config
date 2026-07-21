@@ -174,7 +174,7 @@ bindsym $mod+v split v
 
 
 # Apps
-#bindsym $mod+p exec arandr
+bindsym $mod+g exec galculator
 bindsym $mod+Control+p exec proton-authenticator
 bindsym $mod+Shift+p exec pavucontrol
 #bindsym $mod+o exec alacritty -e ~/.scripts/dev-launcher

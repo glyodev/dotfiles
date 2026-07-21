@@ -7,18 +7,17 @@ theme='menu'
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
-currect=''
 
 # Options
-dark='󰖔 dark theme'
-light='󰖨 light theme'
-auto="󰔎 auto theme"
+dark='󰖔  dark theme'
+light='󰖨  light theme'
+auto="󰔎  auto theme"
 
 dark_theme='MacOSGary'
 light_theme='WhiteSur-Light'
 
-yes=' yes'
-no='󰜺 no'
+yes='  yes'
+no='󰜺  no'
 
 current_theme=$(grep "^gtk-theme-name=" ~/.config/gtk-3.0/settings.ini | cut -d= -f2)
 mode=""

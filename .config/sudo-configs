@@ -15,3 +15,13 @@ WantedBy=multi-user.target
 # /etc/udev/rules.d/99-usb-sounds.rules
 ACTION=="add", SUBSYSTEM=="usb", RUN+="/usr/bin/su gary -c 'XDG_RUNTIME_DIR=/run/user/1000 play /usr/share/sounds/freedesktop/stereo/device-added.oga'"
 ACTION=="remove", SUBSYSTEM=="usb", RUN+="/usr/bin/su gary -c 'XDG_RUNTIME_DIR=/run/user/1000 play /usr/share/sounds/freedesktop/stereo/device-removed.oga'"
+
+# /etc/containerd/config.toml
+version = 2
+root = "/glyo/Linux/.containerd"
+state = "/run/containerd"
+
+# /etc/docker/daemon.json
+{
+	"data-root": "/glyo/Linux/.docker"
+}
