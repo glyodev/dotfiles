@@ -83,10 +83,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Down move down
 
 # --- Layout ---
-bindsym $mod+$alt+space layout toggle split
+#bindsym $mod+$alt+space layout toggle split
 bindsym $mod+Tab fullscreen toggle
-bindsym $mod+Shift+t layout stacking
-bindsym $mod+t layout tabbed
+#bindsym $mod+Shift+t layout stacking
+#bindsym $mod+t layout tabbed
 
 # --- Floating ---
 bindsym $mod+s floating toggle

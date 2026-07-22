@@ -58,13 +58,13 @@ run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--pc' ]]; then
-			exec echo 'only-laptop' > "$dir_screen/current"
+			echo 'only-laptop' > "$dir_screen/current" && "$dir_screen/main.sh"
 		elif [[ $1 == '--extend' ]]; then
-			exec echo 'extend' > "$dir_screen/current"
+			echo 'extend' > "$dir_screen/current" && "$dir_screen/main.sh"
 		elif [[ $1 == '--mirror' ]]; then
-			exec echo 'mirror' > "$dir_screen/current"
+			echo 'mirror' > "$dir_screen/current" && "$dir_screen/main.sh"
 		elif [[ $1 == '--hdmi' ]]; then
-			exec echo 'only-hdmi' > "$dir_screen/current"
+			echo 'only-hdmi' > "$dir_screen/current" && "$dir_screen/main.sh"
 		fi
 	else
 		exit 0
