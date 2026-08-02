@@ -177,7 +177,7 @@ bindsym $mod+v split v
 bindsym $mod+g exec galculator
 bindsym $mod+Control+p exec proton-authenticator
 bindsym $mod+Shift+p exec pavucontrol
-#bindsym $mod+o exec alacritty -e ~/.scripts/dev-launcher
+bindsym $mod+o exec alacritty -e ~/.scripts/apps/dev-launcher
 
 
 
