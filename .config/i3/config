@@ -111,11 +111,14 @@ bindsym $mod+space exec bash -c 'setxkbmap -query | grep -q "layout.*latam" && s
 for_window [class="Gimp"] move to workspace 8, floating enable
 for_window [class="Chromium"] move to workspace 2
 for_window [class="Galculator"] floating enable
-for_window [class="Pavucontrol"] floating enable
+for_window [class="pavucontrol"] floating enable
 for_window [class="Arandr"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Proton-authenticator"] floating enable
 for_window [class="Engrampa"] floating enable
+for_window [class="Blueman-manager"] floating enable
+for_window [class="Free Download Manager"] floating enable
+for_window [class="Ciano"] floating enable
 
 # --- Brillo ---
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
@@ -178,7 +181,8 @@ bindsym $mod+g exec galculator
 bindsym $mod+Control+p exec proton-authenticator
 bindsym $mod+Shift+p exec pavucontrol
 bindsym $mod+o exec alacritty -e ~/.scripts/apps/dev-launcher
-
+bindsym $mod+b exec blueman-manager
+bindsym $mod+c exec ciano
 
 
 
@@ -187,7 +191,7 @@ bindsym $mod+o exec alacritty -e ~/.scripts/apps/dev-launcher
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 #exec --no-startup-id /usr/lib/xdg-desktop-portal-gtk
-#exec --no-startup-id xfce4-clipman
+exec --no-startup-id xfce4-clipman
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id picom --backend glx --vsync

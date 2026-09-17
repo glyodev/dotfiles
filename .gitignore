@@ -2,6 +2,7 @@
 *
 !.gitignore
 !.vimrc
+!.Xresources
 !.xprofile
 !.zshrc
 
@@ -72,9 +73,9 @@
 
 
 # ------- Icons -------
-!.icons/
-!.icons/*.tar.xz
-!.icons/*.zip
+#!.icons/
+#!.icons/*.tar.xz
+#!.icons/*.zip
 
 
 

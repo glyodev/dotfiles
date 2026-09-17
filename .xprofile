@@ -3,6 +3,8 @@
 numlockx on
 setxkbmap us -variant altgr-intl
 
+# xinput set-prop 12 "libinput Accel Speed" -0.75
+
 export PATH="$HOME/.local/bin:$PATH"
 export LOCK_CMD="i3lock"
 export QT_QPA_PLATFORMTHEME=qt5ct
