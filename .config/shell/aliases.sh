@@ -14,8 +14,12 @@ alias docker-stop='sudo systemctl stop docker.service docker.socket'
 alias docker-status='sudo systemctl status docker'
 alias docker-restart='sudo systemctl restart docker'
 alias docker-reset='sudo systemctl reset-failed docker.service docker.socket'
-alias docker-exec='docker exec -it -u $1 $2 bash'
-
+docker-exec() {
+	docker exec -it "$1" bash
+}
+docker-uexec() {
+	docker exec -it -u "$1" "$2" bash
+}
 
 
 # Mis alias

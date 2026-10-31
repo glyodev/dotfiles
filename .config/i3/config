@@ -4,31 +4,39 @@ bindsym $mod+Shift+r restart
 
 font pango:monospace 9
 
+
 # --- NO barra ---
 bar {
     mode invisible
 		tray_output none
 }
 
+
 # --- GAPS ---
 gaps inner 7
 gaps outer 0
+gaps top 44
+
 
 # --- Focus ---
 focus_follows_mouse yes
 mouse_warping none
 focus_on_window_activation focus
 
+
 # --- Terminales ---
 bindsym $mod+Return split h; exec alacritty
 bindsym $mod+Ctrl+Return split v; exec alacritty
 
+
 # --- File manager ---
 bindsym $mod+e exec thunar
+
 
 # --- Launcher ---
 bindsym $mod+m exec rofi -show drun combi -icon-theme 'Reversal' -show-icons
 bindsym $mod+$alt+m exec rofi -modi emoji -show emoji
+
 
 # --- Menus ---
 bindsym $alt+F4 exec ~/.config/rofi/scripts/power.sh
@@ -82,11 +90,15 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Down move down
 
+
+
 # --- Layout ---
 #bindsym $mod+$alt+space layout toggle split
 bindsym $mod+Tab fullscreen toggle
 #bindsym $mod+Shift+t layout stacking
 #bindsym $mod+t layout tabbed
+
+
 
 # --- Floating ---
 bindsym $mod+s floating toggle
@@ -101,11 +113,17 @@ bindsym $mod+Control+Down resize grow height 20 px
 
 floating_modifier $mod
 
+
+
 # --- Cerrar ---
 bindsym $mod+q kill
 
+
+
 # --- Cambiar teclado ---
 bindsym $mod+space exec bash -c 'setxkbmap -query | grep -q "layout.*latam" && setxkbmap us -variant altgr-intl || setxkbmap latam'
+
+
 
 # --- Ventanas especiales ---
 for_window [class="Gimp"] move to workspace 8, floating enable
@@ -120,21 +138,26 @@ for_window [class="Blueman-manager"] floating enable
 for_window [class="Free Download Manager"] floating enable
 for_window [class="Ciano"] floating enable
 
+
+
 # --- Brillo ---
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+
 
 # --- Audio ---
 bindsym XF86AudioRaiseVolume exec pamixer --increase 2 && notify-send -r 9999 -i audio-volume-high "Volume + $(pamixer --get-volume)%"
 bindsym XF86AudioLowerVolume exec pamixer --decrease 2 && notify-send -r 9999 -i audio-volume-low "Volume - $(pamixer --get-volume)%"
 bindsym XF86AudioMute exec pamixer --toggle-mute
 
+
+
 # --- Atajos teclado ---
 bindsym Print exec xfce4-screenshooter
 bindsym Shift+Print exec xfce4-screenshooter -r
 bindsym Shift+Ctrl+Print exec xfce4-screenshooter -f
 bindsym $mod+Control+R exec polybar-msg cmd restart
-for_window [class=".*"] border pixel 1 
 
 
 
@@ -144,18 +167,28 @@ exec --no-startup-id i3-focus-last server
 bindsym $alt+Tab exec --no-startup-id i3-focus-last switch
 bindsym $alt+Shift+Tab exec --no-startup-id i3-focus-last menu
 
-for_window [class=".*"] border pixel 1
 
 
 # --- Ventanas estilo bspwm
+
+#for_window [class=".*"] border pixel 2
+default_border pixel 1
+client.focused       #0686ff #0686ff #ffffff #0686ff #0686ff
+#client.unfocused     #333333 #222222 #888888 #222222 #333333
+
 # nuevas ventanas van dentro del contenedor actual
 for_window [class=".*"] focus
+
 # split por defecto
 default_orientation auto
 workspace_layout default
+
 # layouts útiles
 bindsym $mod+h split h
 bindsym $mod+v split v
+
+
+
 
 # --- Autostart ---
 #exec --no-startup-id xset dpms 540 540 900

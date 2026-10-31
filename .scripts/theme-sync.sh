@@ -19,6 +19,9 @@ if [[ "$theme" == *Light* ]]; then
 
     # Wallpaper
     feh --bg-scale ~/Pictures/Wallpapers/fondo3.jpg
+
+		# Prefer theme
+		gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
 else
 
 		# Polybar
@@ -34,7 +37,10 @@ else
     ln -sf ~/.config/dunst/dark.conf ~/.config/dunst/dunstrc
 
     # Wallpaper
-    feh --bg-scale ~/Pictures/Wallpapers/fondo2.jpg
+    feh --bg-scale ~/Pictures/Wallpapers/fondo4.jpg
+
+		# Prefer theme
+		gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 fi
 
 # Reiniciar Dunst
