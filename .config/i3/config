@@ -171,9 +171,9 @@ bindsym $alt+Shift+Tab exec --no-startup-id i3-focus-last menu
 
 # --- Ventanas estilo bspwm
 
-#for_window [class=".*"] border pixel 2
-default_border pixel 1
-client.focused       #0686ff #0686ff #ffffff #0686ff #0686ff
+for_window [class=".*"] border pixel 2
+default_border pixel 2
+#client.focused       #0686ff #0686ff #ffffff #0686ff #0686ff
 #client.unfocused     #333333 #222222 #888888 #222222 #333333
 
 # nuevas ventanas van dentro del contenedor actual

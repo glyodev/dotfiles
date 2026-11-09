@@ -25,7 +25,7 @@ shape = "Block"
 save_to_clipboard = true
 
 [window]
-decorations = "full"
+decorations = "none"
 dynamic_title = true
 opacity = 0.75
 dynamic_padding = true

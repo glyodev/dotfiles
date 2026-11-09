@@ -30,6 +30,12 @@
 !.config/i3/
 !.config/i3/config
 
+# mpd
+!.config/
+!.config/*.conf
+!.config/playlist
+!.config/playlist/.gitkeep
+
 # Picom
 !.config/picom/
 !.config/picom/*.conf
