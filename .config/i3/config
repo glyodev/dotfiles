@@ -224,6 +224,7 @@ bindsym $mod+c exec ciano
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 #exec --no-startup-id /usr/lib/xdg-desktop-portal-gtk
+
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet

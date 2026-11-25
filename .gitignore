@@ -31,10 +31,10 @@
 !.config/i3/config
 
 # mpd
-!.config/
-!.config/*.conf
-!.config/playlist
-!.config/playlist/.gitkeep
+!.config/mpd/
+!.config/mpd/*.conf
+!.config/mpd/playlist
+!.config/mpd/playlist/.gitkeep
 
 # Picom
 !.config/picom/
